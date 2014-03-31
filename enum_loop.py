@@ -50,9 +50,6 @@ start_time = time.time()
 # parse the arguments
 parser = argparse.ArgumentParser(description='This tool is used to automate the testing of many IP''s with enum4linux')
 parser.add_argument('-ip','--ipaddress', help='IP Address, IP/CIDR, IP Address File',required=True)
-parser.add_argument('-u','--user',help='SMB user to connect with', default='', required=False)
-parser.add_argument('-p','--pwd',help='SMB password to connect with', default='', required=False)
-parser.add_argument('-d','--domain',help='SMB domain to connect with', default='', required=False)
 args = parser.parse_args()
 
 # get the list of ips
