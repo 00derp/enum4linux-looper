@@ -48,7 +48,7 @@ def get_ips(iparg):
 start_time = time.time()
 
 # parse the arguments
-parser = argparse.ArgumentParser(description='This tool is used to automate looping through IP\'s with enum4linux')
+parser = argparse.ArgumentParser(description='This tool is used to automate the testing of many IP''s with enum4linux')
 parser.add_argument('-ip','--ipaddress', help='IP Address, IP/CIDR, IP Address File',required=True)
 parser.add_argument('-u','--user',help='SMB user to connect with', default='', required=False)
 parser.add_argument('-p','--pwd',help='SMB password to connect with', default='', required=False)
