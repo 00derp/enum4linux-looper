@@ -50,14 +50,16 @@ start_time = time.time()
 # parse the arguments
 parser = argparse.ArgumentParser(description='This tool is used to automate the testing of many IP''s with enum4linux')
 parser.add_argument('-ip','--ipaddress', help='IP Address, IP/CIDR, IP Address File',required=True)
+parser.add_argument('-a','--args', help='Parameters that will be passed to the underlying enum4linux command (pass the args in without a "-")',default='-U',required=False)
 args = parser.parse_args()
 
 # get the list of ips
 ips = get_ips(args.ipaddress)
 
-print ("enum4linux loop is starting...")
+print ("Enum4linux loop is starting...")
 
 for ip in ips:
    #do the enum4linux looping
-   subprocess.call(["enum4linux", "-U", ip])
-print ("enum4linux loop is done...\nCompleted in: %s" % (time.time() - start_time))
+   subprocess.call(["enum4linux", ("-" + args.args), ip])
+
+print ("Enum4linux loop is done...\nCompleted in: %s" % (time.time() - start_time))
